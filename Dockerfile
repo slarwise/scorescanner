@@ -1,9 +1,8 @@
-FROM jjanzic/docker-python3-opencv
+FROM jjanzic/docker-python3-opencv:latest
 
 WORKDIR /usr/src/app
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install gradio
 
 COPY scorescanner.py scores.png .
 
