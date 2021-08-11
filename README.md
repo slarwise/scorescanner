@@ -15,6 +15,12 @@ docker build -t scorescanner .
 docker run -i -t --rm -p 8080:8080 scorescanner
 ```
 
+## Examples
+
+Using the example image when running the web server, you will get something like this
+
+![](https://user-images.githubusercontent.com/25964718/129023050-78c1bfab-69a9-4e68-862d-7fc301d392b6.png)
+
 ## Todo
 
 - [x] Run the program on a simple web server using gradio
