@@ -35,7 +35,7 @@ this
 - [x] Run the program on a simple web server using gradio
 - [x] Print the predicted digits
 - [x] Print the computed sums
-- [x] Add a DOCKERFILE and instructions for how to run it
+- [x] Add a Dockerfile and instructions for how to run it
 - [ ] Implement digit classification
 - [ ] Improve the grid detection
 - [ ] Reduce the image size to a fix size, right now the image processing
