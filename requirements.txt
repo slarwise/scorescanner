@@ -1,1 +1,2 @@
-gradio
+opencv-python==4.5.3.56
+gradio==2.2.8
