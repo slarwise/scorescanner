@@ -5,7 +5,7 @@ import numpy as np
 GRADIO_COLOR_ORANGE = (231, 162, 59)
 def main():
     iface = gr.Interface(analyze_image, gr.inputs.Image(), "image",
-            examples=[["scores.png"]], server_port=8080)
+            examples=[["scores.png"]], server_port=8080, server_name="0.0.0.0")
     iface.launch()
     # show(analyze_image("scores.png"))
 
