@@ -7,7 +7,6 @@ def main():
     iface = gr.Interface(analyze_image, gr.inputs.Image(), "image",
             examples=[["scores.png"]], server_port=8080, server_name="0.0.0.0")
     iface.launch()
-    # show(analyze_image("scores.png"))
 
 def analyze_image(img):
     # Load image
@@ -28,10 +27,6 @@ def analyze_image(img):
     cell_contours = find_cells(contours)
     contours_by_columns = separate_contours_in_columns(cell_contours)
 
-    # for c, _centroid in contours_by_columns[2]:
-    #     draw_contour_on_image(img, c)
-    # show(img)
-
     lowest_centroid = max(column[-1][1][1] for column in contours_by_columns)
     y_pos = lowest_centroid + 100
     for col_nr, column in enumerate(contours_by_columns):
@@ -44,25 +39,11 @@ def analyze_image(img):
             put_text(img, str(prediction), centroid, color=(0, 0, 0))
         column_sum = sum(predictions)
         bottom_centroid = column[-1][1]
-        # second_bottom_centroid = column[-2][1]
-        # y_distance = bottom_centroid[1] - second_bottom_centroid[1]
-        # y_pos = bottom_centroid[1] + y_distance
         x_pos = bottom_centroid[0]
         put_text(img, str(column_sum), (x_pos, y_pos), color=GRADIO_COLOR_ORANGE,
                 font_scale=1.2)
 
     return img
-
-    # show(img)
-
-    # edges = cv.Canny(scoreboard, 100, 200)
-    # lines = cv.HoughLinesP(edges, 1, np.pi/180, 100, minLineLength=100, maxLineGap=10)
-    # for line in lines:
-    #     x1,y1,x2,y2 = line[0]
-    #     cv.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-    # show(img)
-
-    # cv.destroyAllWindows()
 
 def to_gray(img):
     return cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -128,7 +109,6 @@ def separate_contours_in_columns(contours):
     sorted_columns = [sorted(column, key=lambda member: member[1][1]) for
             column in columns]
     return sorted(sorted_columns, key=lambda column: column[0][1][0])
-    # return [[member[0] for member in column] for column in sorted_columns]
 
 def get_centroid(contour):
     moments = cv.moments(contour)
