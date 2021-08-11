@@ -19,7 +19,8 @@ docker run -i -t --rm -p 8080:8080 scorescanner
 
 Using the example image when running the web server, you will get something like this
 
-![](https://user-images.githubusercontent.com/25964718/129023050-78c1bfab-69a9-4e68-862d-7fc301d392b6.png)
+![](https://user-images.githubusercontent.com/25964718/129025190-99be8e5b-b0d9-4826-8606-11c3c5d215cc.png)
+![](https://user-images.githubusercontent.com/25964718/129025199-6ab9002c-32d2-41ae-9827-dc1c60295858.png)
 
 ## Todo
 
