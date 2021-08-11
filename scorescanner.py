@@ -48,7 +48,8 @@ def analyze_image(img):
         # y_distance = bottom_centroid[1] - second_bottom_centroid[1]
         # y_pos = bottom_centroid[1] + y_distance
         x_pos = bottom_centroid[0]
-        put_text(img, str(column_sum), (x_pos, y_pos), color=GRADIO_COLOR_ORANGE)
+        put_text(img, str(column_sum), (x_pos, y_pos), color=GRADIO_COLOR_ORANGE,
+                font_scale=1.2)
 
     return img
 
@@ -138,9 +139,10 @@ def get_centroid(contour):
 def classify(img):
     return 5
 
-def put_text(img, text, bottom_left_position, color=(255, 0, 0)):
+def put_text(img, text, bottom_left_position, color=(255, 0, 0), font_scale=1):
     font = cv.FONT_HERSHEY_SIMPLEX
-    cv.putText(img, text, bottom_left_position, font, 1, color, 2)
+    position = (bottom_left_position[0]-20, bottom_left_position[1])
+    cv.putText(img, text, position, font, font_scale, color, 2)
 
 if __name__ == "__main__":
     main()
