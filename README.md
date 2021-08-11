@@ -5,19 +5,27 @@ Use it with a yahtzee score sheet for example.
 
 ## Usage
 
-### Using docker
-
-Run the program as a local web server accessible on
+Running scorescanner.py will start a local web server accessible on
 [http://0.0.0.0:8080](http://0.0.0.0:8080).
+
+### Using docker
 
 ```sh
 docker build -t scorescanner .
 docker run -i -t --rm -p 8080:8080 scorescanner
 ```
 
+### Without docker
+
+```sh
+pip install -r requirements.txt
+python3 scorescanner.py
+```
+
 ## Examples
 
-Using the example image when running the web server, you will get something like this
+Using the example image when running the web server, you will get something like
+this
 
 ![](https://user-images.githubusercontent.com/25964718/129025190-99be8e5b-b0d9-4826-8606-11c3c5d215cc.png)
 ![](https://user-images.githubusercontent.com/25964718/129025199-6ab9002c-32d2-41ae-9827-dc1c60295858.png)
